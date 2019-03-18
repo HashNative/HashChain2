@@ -20,6 +20,19 @@ class Welcome extends CI_Controller {
 	 */
 	public function index()
 	{
-		$this->load->view('welcome_message');
+		$data['title']='Hash Chain | Login';
+
+		$this->load->view('sections/header', $data);
+		$this->load->view('modules/login/login');
+		$this->load->view('sections/footer');
+	}
+
+	public function dashboard()
+	{
+		$data['title']='Hash Chain | Dashboard';
+
+		$this->load->view('sections/header', $data);
+		$this->load->view('modules/index/index');
+		$this->load->view('sections/footer');
 	}
 }
